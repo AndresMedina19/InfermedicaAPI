@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="card border-light mb-3" style="max-width: 18rem;">
+
+    <div class="card-body">
+      <h5 class="card-title">InfermedicaApp</h5>
+
+
+      <div class="row">
+
+
+
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" formControlName="email">
+            <div *NgIf="myForm.get('email').invalid && myForm.get('email').touched">  
+
+              El email no es válido.
+            </div>
+          </div>
+          <div>
+            <label for="name">Nombre:</label>
+            <input type="password" id="password" formControlName="password">
+            <div *NgIf="myForm.get('password').invalid && myForm.get('password').touched">
+              El password es requerido.
+            </div>
+          </div>
+
+          <button type="submit" [disabled]="!myForm.valid">Enviar</button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
