@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://192.168.50.129:8089'  // URL base para la API
+  apiUrl: 'https://localhost:44308/api/Index'  // URL base para la API
 };

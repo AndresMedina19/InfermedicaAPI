@@ -14,17 +14,18 @@
           <div>
             <label for="email">Email:</label>
             <input type="email" id="email" formControlName="email">
-            <div *NgIf="myForm.get('email').invalid && myForm.get('email').touched">  
-
-              El email no es válido.
-            </div>
+            @if(myForm.get('email')?.invalid && myForm.get('email')?.touched) {
+            <div>  El email no es válido.</div>
+            }
           </div>
           <div>
             <label for="name">Nombre:</label>
             <input type="password" id="password" formControlName="password">
-            <div *NgIf="myForm.get('password').invalid && myForm.get('password').touched">
+            @if(myForm.get('password')?.invalid && myForm.get('password')?.touched) {
+            <div>
               El password es requerido.
             </div>
+            }
           </div>
 
           <button type="submit" [disabled]="!myForm.valid">Enviar</button>
