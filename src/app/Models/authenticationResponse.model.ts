@@ -1,6 +1,6 @@
-export class AuthenticationResponse{
+import { BaseResponse } from "./baseRespose.model";
 
+export class AuthenticationResponse extends BaseResponse {
   Result!: string;
-  statusCode!: number;
-  message!: string
+
 }

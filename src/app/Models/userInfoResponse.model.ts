@@ -1,17 +1,17 @@
-export interface UserInfoResponse {
-  Result: Result
-  statusCode: number
-  message: string
+import { BaseResponse } from "./baseRespose.model"
+
+export class UserInfoResponse extends BaseResponse  {
+  Result!: Result
+
 }
 
-export interface Result {
-  Id: number
-  Nombre: string
-  Apellidos: string
-  Celular: string
-  Correo: string
-  Edad: string
-  Genero: string
-  statusCode: number
-  message: string
+export class Result extends BaseResponse {
+  Id!: number
+  Nombre!: string
+  Apellidos!: string
+  Celular!: string
+  Correo!: string
+  Edad!: string
+  Genero!: string
+
 }

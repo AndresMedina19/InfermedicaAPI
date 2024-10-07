@@ -1,37 +1,64 @@
-<div class="container">
-  <div class="card border-light mb-3" style="max-width: 18rem;">
+<div class="container-fluid mx-auto p-3">
 
-    <div class="card-body">
-      <h5 class="card-title">InfermedicaApp</h5>
+  <div class="row">
+    <div class="col">
 
+    </div>
+    <div class="col-6">
+      <div class="card text-bg-secondary mb-3" style="max-width: 20rem;">
+        <div class="card-header">
+          <h5 class="card-title">InfermedicaApp</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
 
-      <div class="row">
+            <div class="row align-items-start">
+              <div class="col">
+                <label for="email">Email:</label>
+              </div>
+              <div class="col">
+                <input type="email" id="email" class="form-control"   formControlName="email">
+                @if(myForm.get('email')?.invalid && myForm.get('email')?.touched) {
+                <div class="text-danger">  El email no es válido.</div>
+                }
+              </div>
 
-
-
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-
-          <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" formControlName="email">
-            @if(myForm.get('email')?.invalid && myForm.get('email')?.touched) {
-            <div>  El email no es válido.</div>
-            }
-          </div>
-          <div>
-            <label for="name">Nombre:</label>
-            <input type="password" id="password" formControlName="password">
-            @if(myForm.get('password')?.invalid && myForm.get('password')?.touched) {
-            <div>
-              El password es requerido.
             </div>
-            }
-          </div>
+            <br>
+            <div class="row align-items-start">
+              <div  class="col">
+                <label for="name">Password:</label>
+              </div>
+              <div class="col">
+                <input type="password" id="password"  class="form-control"  formControlName="password">
+                @if(myForm.get('password')?.invalid && myForm.get('password')?.touched) {
+                <div class="text-danger">
+                  El password es requerido.
+                </div>
+                }
+              </div>
 
-          <button type="submit" [disabled]="!myForm.valid">Enviar</button>
-        </form>
 
+            </div>
+            <br>
+            <div  class="row align-items-start">
+
+              <button type="submit" class="btn btn-light" [disabled]="!myForm.valid">Enviar</button>
+            </div>
+
+            <div  class="row align-items-start">
+
+              <label for="">¿No tienes usuario <a href="/UsersCreate" class="text-light">crear usuario?</a></label>
+            </div>
+
+          </form>
+        </div>
       </div>
     </div>
+    <div class="col">
 
+    </div>
   </div>
+
+
+</div>

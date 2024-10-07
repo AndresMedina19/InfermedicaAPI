@@ -24,7 +24,7 @@ export class LoginComponent {
 
   constructor(
     private readonly authenticationServiceService: AuthenticationServiceService,
-    private router: Router
+    private readonly router: Router
   ) {
     this.myForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -59,15 +59,22 @@ export class LoginComponent {
         let nombres = v.Result.Nombre+" "+v.Result.Apellidos;
         sessionStorage.setItem('nombres',nombres);
         sessionStorage.setItem('userId',v.Result.Id.toString());
-
-
-      // Redirigir a la página principal
+        sessionStorage.setItem('genero',v.Result.Genero);
+        sessionStorage.setItem('edad',v.Result.Edad);
       this.router.navigate(['/home']);
       },
       error: (e) => {
         console.log('error');
       },
     });
+  }
+
+
+  sendConditions(){
+
 
   }
+
+
+
 }

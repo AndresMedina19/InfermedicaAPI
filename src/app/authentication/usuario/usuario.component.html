@@ -1,1 +1,80 @@
-<p>usuario works!</p>
+<div class="container-fluid mx-auto p-3">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-10">
+
+      <div class="card text-bg-primary mb-3">
+        <div class="card-header">Registro de usuario</div>
+        <div class="card-body">
+          @if (messageShow) {
+          <div class="alert alert-success" role="alert">
+            {{ message }}
+          </div>
+
+          }
+
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col">
+                <label for="Nombre" class="form-label">Nombres</label>
+                <input type="text" id="Nombre" class="form-control" formControlName="Nombre">
+              </div>
+              <div class="col">
+                <label for="Apellidos" class="form-label">Apellidos</label>
+                <input type="text" id="Apellidos" class="form-control" formControlName="Apellidos">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="Celular" class="form-label">Celular</label>
+                <input type="text" id="Celular" class="form-control" formControlName="Celular">
+              </div>
+              <div class="col">
+                <label for="Correo" class="form-label">Correo</label>
+                <input type="email" id="Correo" class="form-control" formControlName="Correo">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="exampleDataList" class="form-label">Genero</label>
+                <select class="form-control" id="exampleDataList" formControlName="Genero">
+                  <option selected>Seleccione una opcion</option>
+                  <option value="male">Hombre</option>
+                  <option value="female">Mujer</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="Edad" class="form-label">Edad</label>
+                <input type="text" id="Edad" class="form-control" formControlName="Edad">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="Contrasena" class="form-label">Contraseña</label>
+                <input type="password" id="Correo" class="form-control" formControlName="Contrasena">
+              </div>
+
+            </div>
+            <br>
+            <div class="row">
+
+
+              <div class="col">
+                <button type="submit" class="btn btn-light" [disabled]="!myForm.valid">Enviar</button>
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+</div>
